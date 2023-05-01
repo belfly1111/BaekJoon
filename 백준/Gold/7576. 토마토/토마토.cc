@@ -7,6 +7,7 @@ int N, M, day = 0;
 bool isVisit[1000][1000] = {};
 int box[1000][1000] = {};
 
+// bfs에서 4방위를 쉽게 돌기위한 배열
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = { 0, 1, 0, -1 };
 
@@ -18,6 +19,7 @@ int main()
 
 	cin >> M >> N;
 	
+	// 상자 내부의 모든 토마토가 익었는지 확인하는 변수. 전부 익었을 경우 42번째 줄로 이동해 종료한다.
 	bool allTomatoRiped = true;
 	for (int i = 0; i < N; i++)
 	{
@@ -43,7 +45,8 @@ int main()
 		return 0;
 	}
 
-	// bfs 시작, 날짜를 세야한다
+	// bfs 시작, 날짜를 세야한다.
+	// 최단거리를 구하는 것도 아니며 각 토마토 별로 사방위를 순회하는 것이기 때문에, 큐를 두 개 만들어 bfs를 진행하였다.
 	while (!Q.empty())
 	{
 		queue<pair<int,int>> curQ;
