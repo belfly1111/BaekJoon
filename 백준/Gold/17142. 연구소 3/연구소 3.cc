@@ -186,7 +186,7 @@ int spreadVirus() {
 		curQ = {};
 	}
 
-	// 바이러스가 모든 빈 방을 다 돌았을 경우 반복을 즉시 중지한다.
+	// 바이러스가 모든 빈 방을 돌지 못했을 경우 '-1'을 리턴
 	if (emptyRoomCount != emptyRoom)
 	{
 		return -1;
